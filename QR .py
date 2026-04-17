@@ -1,7 +1,5 @@
 import qrcode
 import qrcode
-import base64
-
 
 choice = input("Enter 1 for Website QR, 2 for UPI QR: ")
 
@@ -21,13 +19,6 @@ elif choice == "2":
     qr = qrcode.make(upi_url)
     qr.save("upi_qr.png")
     print("UPI QR generated!")
-
-elif choice == "3":
-    with open("image.jpg", "rb") as img_file:
-        image_data = base64.b64encode(img_file.read()).decode()
-        qr = qrcode.make(image_data)
-        qr.save("image_qr.png")
-        print("Image QR generated!")
 
 else:
     print("Invalid choice")
